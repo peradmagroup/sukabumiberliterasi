@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Literasi Sukabumi - Splash</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#07101e", // Deep Indigo from design system
+                        "primary-container": "#1c2534",
+                        "secondary-container": "#dddfe8",
+                        "on-primary-container": "#838c9f",
+                        "surface": "#fbf9f9",
+                        "outline-variant": "#c5c6cc"
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.25rem",
+                        lg: "0.5rem",
+                        xl: "0.75rem",
+                        full: "9999px"
+                    },
+                    spacing: {
+                        "margin-mobile": "16px",
+                        "lg": "24px",
+                        "xl": "40px",
+                        "base": "4px"
+                    },
+                    fontFamily: {
+                        body: ["Inter", "sans-serif"],
+                        headline: ["Inter", "sans-serif"]
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards',
+                        'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
+                        'shimmer': 'shimmer 2s infinite linear'
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'scale(0.95) translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'scale(1) translateY(0)' }
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { opacity: '0.3', transform: 'scale(1)' },
+                            '50%': { opacity: '0.6', transform: 'scale(1.1)' }
+                        },
+                        shimmer: {
+                            '0%': { transform: 'translateX(-100%)' },
+                            '100%': { transform: 'translateX(100%)' }
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+<style>
+        body {
+            background-color: #07101e; /* Deep indigo from theme primary */
+            margin: 0;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .splash-content {
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="antialiased">
+<!-- Atmospheric Background Effects -->
+<div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-container/20 rounded-full blur-[120px] animate-pulse-glow"></div>
+<div class="absolute -bottom-20 -right-20 w-80 h-80 bg-on-primary-container/5 rounded-full blur-[100px]"></div>
+</div>
+<main class="relative z-10 flex flex-col items-center justify-center text-center px-margin-mobile splash-content">
+<!-- Logo Container -->
+<div class="relative mb-8 group animate-fade-in-up">
+<!-- Subtle Glow behind logo -->
+<div class="absolute inset-0 bg-primary-container blur-2xl rounded-full opacity-50 scale-125"></div>
+<div class="relative bg-primary-container/40 p-6 rounded-full border border-white/5 backdrop-blur-sm shadow-2xl">
+<img alt="Sukabumi Berliterasi Logo" class="h-32 w-auto object-contain drop-shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkC-TxELDMLyt9E2gUSklrgvduB8HXVRSoxhHdPGrr1XLf2wC7sHcaf3kdTWuhjStj4CdESNP65y-a4tA5wZ4Wef7EQOWk91_1Kc7lJ982VLPhxmVpxao_FalSv-iXpVUrie_tVjMDSpCG-J_CZgQVZjaPdqDkellcp_pCB3XAxIlpvp2_9PgVX-1NnPu9xmt0jzfDiVKG9fU7hqHy3foCMb6moZYJGAcFmop6kY_yTm5p5tx7_XGVlnfT5i4x1lw5kJYNXcK92EPf"/>
+</div>
+</div>
+<!-- Brand Text Section -->
+<div class="space-y-3 animate-fade-in-up" style="animation-delay: 0.2s;">
+<h1 class="font-headline text-3xl font-bold text-white tracking-tight">
+                Sukabumi Berliterasi
+            </h1>
+<p class="font-body text-base text-on-primary-container/80 max-w-xs mx-auto font-light italic">
+                Jendela ilmu untuk warga Sukabumi
+            </p>
+</div>
+<!-- Loading Indicator -->
+<div class="absolute bottom-16 left-0 w-full flex flex-col items-center animate-fade-in-up" style="animation-delay: 0.4s;">
+<div class="w-32 h-0.5 bg-white/10 rounded-full overflow-hidden relative">
+<div class="absolute top-0 left-0 h-full w-full bg-gradient-to-r from-transparent via-secondary-container/60 to-transparent animate-shimmer"></div>
+</div>
+<p class="mt-4 font-body text-[10px] text-on-primary-container/40 uppercase tracking-[0.25em]">
+                Menyiapkan Konten
+            </p>
+</div>
+</main>
+<script>
+        // Transition logic to main application
+        document.addEventListener('DOMContentLoaded', () => {
+            // Simulated minimal splash duration before fade out
+            setTimeout(() => {
+                const main = document.querySelector('main');
+                if (main) {
+                    main.classList.add('transition-all', 'duration-1000', 'opacity-0', 'scale-105');
+                }
+                
+                // In a production environment, this is where you would redirect
+                // setTimeout(() => { window.location.href = '/home'; }, 1000);
+            }, 3000);
+        });
+    </script>
+</body></html>

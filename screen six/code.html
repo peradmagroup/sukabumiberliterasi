@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"tertiary-container": "#30230c", "surface-container-low": "#f6f3f4", "on-tertiary-fixed": "#251904", "surface-container-high": "#eae7e8", "surface-container-lowest": "#ffffff", "on-error-container": "#93000a", "on-tertiary-fixed-variant": "#54442a", "inverse-on-surface": "#f3f0f1", "on-tertiary-container": "#9e896b", "primary-fixed-dim": "#bec7db", "on-background": "#1b1b1c", secondary: "#5b5e66", "surface-variant": "#e4e2e3", "secondary-fixed-dim": "#c4c6cf", "on-primary": "#ffffff", "inverse-surface": "#303031", "on-tertiary": "#ffffff", "error-container": "#ffdad6", "on-error": "#ffffff", "primary-container": "#1c2534", "on-secondary": "#ffffff", "on-primary-fixed": "#131c2a", background: "#fbf9f9", "on-secondary-fixed": "#181c22", "on-secondary-container": "#5f636a", "surface-tint": "#565f70", "surface-bright": "#fbf9f9", "on-surface-variant": "#45474c", "tertiary-fixed-dim": "#dac3a1", surface: "#fbf9f9", tertiary: "#190e00", "tertiary-fixed": "#f7dfbc", error: "#ba1a1a", "secondary-fixed": "#e0e2eb", "on-surface": "#1b1b1c", "on-secondary-fixed-variant": "#43474e", "inverse-primary": "#bec7db", primary: "#07101e", "surface-container": "#f0edee", "surface-container-highest": "#e4e2e3", "outline-variant": "#c5c6cc", "surface-dim": "#dcd9da", "primary-fixed": "#dae3f7", "on-primary-fixed-variant": "#3e4757", outline: "#75777d", "secondary-container": "#dddfe8", "on-primary-container": "#838c9f"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {"margin-mobile": "16px", md: "16px", "margin-desktop": "32px", xs: "4px", sm: "8px", lg: "24px", base: "4px", xl: "40px", gutter: "16px"}, fontFamily: {"headline-md": ["Inter"], "body-sm": ["Inter"], "headline-lg-mobile": ["Inter"], "headline-sm": ["Inter"], "label-md": ["Inter"], "headline-lg": ["Inter"], "body-md": ["Inter"], "body-lg": ["Inter"], headline: ["Inter"], display: ["Inter"], body: ["Inter"], label: ["Inter"]}, fontSize: {"headline-md": ["24px", {lineHeight: "32px", fontWeight: "600"}], "body-sm": ["14px", {lineHeight: "20px", fontWeight: "400"}], "headline-lg-mobile": ["26px", {lineHeight: "32px", letterSpacing: "-0.02em", fontWeight: "700"}], "headline-sm": ["20px", {lineHeight: "28px", fontWeight: "600"}], "label-md": ["12px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600"}], "headline-lg": ["32px", {lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700"}], "body-md": ["16px", {lineHeight: "24px", fontWeight: "400"}], "body-lg": ["18px", {lineHeight: "28px", fontWeight: "400"}]}}}};</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .soft-card-shadow {
+            box-shadow: 0 4px 12px rgba(133, 144, 166, 0.04);
+        }
+        .form-focus-glow:focus-within {
+            box-shadow: 0 0 0 4px rgba(9, 20, 38, 0.05);
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c5c6cd;
+            border-radius: 10px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center px-margin-mobile h-16 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-fixed">
+<img class="w-full h-full object-cover" data-alt="A high-quality, professional headshot of a person with a friendly expression, set against a soft-focus office interior. The lighting is warm and natural, following a modern editorial photography style with a palette of soft blues and crisp whites to match a sophisticated educational platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7xmjrdW8IL-1FnLddaE7QfPWkYIoGRRCksj9QUtSkaS-Is02H_OPErq3FYwIwWhDb9CXyy3nf6QOKqRdbMiiRA3yJQUq_ADw5j0Qv3kMD10jbqrvcM-jaLq4Fb8cWIC-TNBWhF2EsJtefrDgWIm9WYx7jqQH8r0lcZy5D18Mp9MvoLEmsqG0x9B_up0n_xo3Igzn-abUbnJTDuicSruK8DGPl0DEig8QN8OIWcwBrHs-lJ5dt311e0Rc4Dt-tPlnEo76bUE7dAMlKpa8"/>
+</div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Sukabumi Berliterasi</h1>
+</div>
+<button class="transition-all duration-250 ease-out active:scale-95 text-primary p-2 hover:bg-surface-container-low rounded-full">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+</button>
+</div>
+</header>
+<main class="pt-24 px-margin-mobile max-w-7xl mx-auto">
+<!-- Hero Section & Disclaimer -->
+<section class="mb-lg">
+<div class="relative overflow-hidden rounded-xl bg-primary-container p-lg text-on-primary-container mb-sm">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg mb-sm relative z-10">Konsultasi &amp; Live Aduan</h2>
+<p class="font-body-md text-body-md text-on-primary-container/80 relative z-10">Punya kendala literasi atau ingin bertanya langsung pada tim kami?</p>
+</div>
+<div class="flex items-start gap-sm bg-surface-container-low p-md rounded-lg border border-outline-variant/30">
+<span class="material-symbols-outlined text-secondary shrink-0" data-icon="info">info</span>
+<p class="font-label-md text-label-md text-on-surface-variant">
+                    Layanan ini merupakan inisiatif Pegiat Literasi independen Kota Sukabumi, namun berkolaborasi dengan berbagai pihak untuk menyalurkan inspirasi warga.
+                </p>
+</div>
+</section>
+<!-- Main Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg items-start">
+<!-- Form Section -->
+<section class="lg:col-span-7 bg-white rounded-xl p-lg border border-outline-variant/50 soft-card-shadow">
+<div class="flex items-center gap-sm mb-lg">
+<span class="material-symbols-outlined text-primary" data-icon="edit_note">edit_note</span>
+<h3 class="font-headline-sm text-headline-sm">Formulir Interaktif</h3>
+</div>
+<form class="space-y-md" id="complaintForm">
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-outline ml-1">Nama Lengkap</label>
+<div class="form-focus-glow rounded-lg border border-outline-variant transition-all">
+<input class="w-full bg-transparent border-none rounded-lg p-md focus:ring-0 text-body-md" placeholder="Contoh: Rahma Sukmawati" type="text"/>
+</div>
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-outline ml-1">Tipe Interaksi</label>
+<div class="form-focus-glow rounded-lg border border-outline-variant transition-all">
+<select class="w-full bg-transparent border-none rounded-lg p-md focus:ring-0 text-body-md appearance-none">
+<option>Aduan Fasilitas</option>
+<option>Konsultasi Buku</option>
+<option>Layanan Komunitas</option>
+<option>Lainnya</option>
+</select>
+</div>
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-outline ml-1">Pesan / Aduan</label>
+<div class="form-focus-glow rounded-lg border border-outline-variant transition-all">
+<textarea class="w-full bg-transparent border-none rounded-lg p-md focus:ring-0 text-body-md resize-none" placeholder="Tuliskan pesan atau keluhan Anda di sini..." rows="4"></textarea>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary font-headline-sm py-md rounded-lg flex justify-center items-center gap-sm transition-all duration-250 hover:bg-primary-container active:scale-95 shadow-md" type="submit">
+<span class="material-symbols-outlined" data-icon="send">send</span>
+                        Kirim Aduan
+                    </button>
+</form>
+</section>
+<!-- Live Feed Section -->
+<section class="lg:col-span-5 space-y-md">
+<div class="flex items-center justify-between mb-sm">
+<div class="flex items-center gap-sm">
+<div class="relative">
+<span class="material-symbols-outlined text-secondary" data-icon="sensors">sensors</span>
+<span class="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full animate-ping"></span>
+</div>
+<h3 class="font-headline-sm text-headline-sm">Live Aduan Publik</h3>
+</div>
+<span class="font-label-md text-label-md bg-secondary-container px-2 py-1 rounded text-on-secondary-container">Real-time</span>
+</div>
+<div class="space-y-md max-h-[600px] overflow-y-auto pr-2" id="liveFeed">
+<!-- Feed Item 1 -->
+<div class="bg-white p-md rounded-xl border border-outline-variant/30 soft-card-shadow transition-transform hover:-translate-y-1 opacity-100 translate-y-0">
+<div class="flex justify-between items-start mb-sm">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-primary">R</div>
+<div>
+<p class="font-label-md text-label-md text-primary">R***a</p>
+<p class="text-[10px] text-outline uppercase tracking-wider">Aduan Fasilitas</p>
+</div>
+</div>
+<span class="text-[10px] text-outline">2 menit yang lalu</span>
+</div>
+<p class="text-body-sm text-on-surface-variant line-clamp-2">"Pojok baca di taman kota butuh update koleksi buku anak-anak. Banyak yang sudah rusak covernya."</p>
+</div>
+<!-- Feed Item 2 -->
+<div class="bg-white p-md rounded-xl border border-outline-variant/30 soft-card-shadow transition-transform hover:-translate-y-1 opacity-100 translate-y-0">
+<div class="flex justify-between items-start mb-sm">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-primary">A</div>
+<div>
+<p class="font-label-md text-label-md text-primary">A***d</p>
+<p class="text-[10px] text-outline uppercase tracking-wider">Konsultasi Buku</p>
+</div>
+</div>
+<span class="text-[10px] text-outline">15 menit yang lalu</span>
+</div>
+<p class="text-body-sm text-on-surface-variant line-clamp-2">"Mohon rekomendasi buku sejarah Sukabumi masa kolonial untuk tugas kuliah saya. Terima kasih."</p>
+</div>
+<!-- Feed Item 3 -->
+<div class="bg-white p-md rounded-xl border border-outline-variant/30 soft-card-shadow transition-transform hover:-translate-y-1 opacity-80 opacity-100 translate-y-0">
+<div class="flex justify-between items-start mb-sm">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-primary">S</div>
+<div>
+<p class="font-label-md text-label-md text-primary">S***i</p>
+<p class="text-[10px] text-outline uppercase tracking-wider">Layanan Komunitas</p>
+</div>
+</div>
+<span class="text-[10px] text-outline">1 jam yang lalu</span>
+</div>
+<p class="text-body-sm text-on-surface-variant line-clamp-2">"Kapan ada acara mendongeng lagi di perpustakaan daerah? Anak-anak sangat menantikannya."</p>
+</div>
+<!-- Feed Item 4 -->
+<div class="bg-white p-md rounded-xl border border-outline-variant/30 soft-card-shadow transition-transform hover:-translate-y-1 opacity-60 opacity-100 translate-y-0">
+<div class="flex justify-between items-start mb-sm">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-primary">H</div>
+<div>
+<p class="font-label-md text-label-md text-primary">H***y</p>
+<p class="text-[10px] text-outline uppercase tracking-wider">Aduan Fasilitas</p>
+</div>
+</div>
+<span class="text-[10px] text-outline">3 jam yang lalu</span>
+</div>
+<p class="text-body-sm text-on-surface-variant line-clamp-2">"WiFi di area perpustakaan sering terputus, mohon tim IT bisa mengecek routernya."</p>
+</div>
+</div>
+<div class="mt-lg p-lg bg-surface-container rounded-xl border-2 border-dashed border-outline-variant/50">
+<div class="w-full h-48 bg-cover bg-center rounded-lg mb-md" data-alt="A clean, minimalist 3D isometric illustration of a digital help desk featuring a friendly floating robot and speech bubbles. The design uses a professional color scheme of deep indigo and amber accents, set against a pristine white background. The style is modern, soft-UI, with smooth gradients and high-end digital art finishes." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCcYOfyWBtxvRYctAY3I1QhmSKGqJSJkoNMUWlnCE_KxzxO8een3WqTLaQmG9YZdQ8lzVE3X1p_6Hy1z5VP9dSxLR4R3yoHp3o2MJ7X4jqpyBmesefiHDkpuiFO0dXg7LluX52HzvSuKrhduoGNlauOsb1gVOT1l0_I6UBC1hcBFAKC_hTozEVTS2GGK9K91pq4WVf2QpenYCdnKMJZCb7_UTJj5I-RD3wXvTQ03yJDuoqFQ2anBgnqhYEoz71ucFyb21sdfWICzW-0");'></div>
+<p class="text-center font-body-sm text-body-sm text-on-surface-variant">Layanan kami tersedia 24/7 secara sistem, namun respon tim dilakukan pada jam kerja (08:00 - 17:00).</p>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-2 py-3 pb-safe bg-surface/90 backdrop-blur-md z-50 rounded-t-xl border-t border-outline-variant/30 shadow-[0_-4px_12px_rgba(0,0,0,0.04)]">
+<button class="flex flex-col items-center justify-center text-on-surface-variant transition-transform duration-200 ease-in-out active:scale-90 hover:text-secondary/80">
+<span class="material-symbols-outlined" data-icon="info">info</span>
+<span class="font-label-md text-label-md">Info</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant transition-transform duration-200 ease-in-out active:scale-90 hover:text-secondary/80">
+<span class="material-symbols-outlined" data-icon="event_note">event_note</span>
+<span class="font-label-md text-label-md">Agenda</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant transition-transform duration-200 ease-in-out active:scale-90 hover:text-secondary/80">
+<span class="material-symbols-outlined" data-icon="handshake">handshake</span>
+<span class="font-label-md text-label-md">Mitra</span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary font-bold relative after:content-[''] after:w-1 after:h-1 after:bg-secondary-container after:rounded-full after:mt-1 transition-transform duration-200 ease-in-out active:scale-90">
+<span class="material-symbols-outlined" data-icon="chat" style='font-variation-settings: "FILL" 1;'>chat</span>
+<span class="font-label-md text-label-md">Konsul</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant transition-transform duration-200 ease-in-out active:scale-90 hover:text-secondary/80">
+<span class="material-symbols-outlined" data-icon="volunteer_activism">volunteer_activism</span>
+<span class="font-label-md text-label-md">Donasi</span>
+</button>
+</nav>
+<script>
+        document.getElementById('complaintForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalContent = btn.innerHTML;
+            
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin" data-icon="progress_activity">progress_activity</span> Mengirim...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                btn.innerHTML = '<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span> Berhasil Terkirim';
+                btn.classList.replace('bg-primary', 'bg-tertiary-fixed-dim');
+                btn.classList.add('text-tertiary-container');
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalContent;
+                    btn.classList.replace('bg-tertiary-fixed-dim', 'bg-primary');
+                    btn.classList.remove('text-tertiary-container');
+                    btn.disabled = false;
+                    e.target.reset();
+                }, 3000);
+            }, 1500);
+        });
+
+        // Simple animation for the feed items on load
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-4');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('#liveFeed > div').forEach(card => {
+            card.classList.add('transition-all', 'duration-500', 'opacity-0', 'translate-y-4');
+            observer.observe(card);
+        });
+    </script>
+</body></html>

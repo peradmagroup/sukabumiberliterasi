@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-primary m-0 overflow-x-hidden;
+  }
+}
+
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    height: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #e2e8f0;
+    border-radius: 10px;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  .accordion-active .accordion-content {
+    max-height: 1000px;
+  }
+  .accordion-active .rotate-icon {
+    transform: rotate(180deg);
+  }
+  .glass-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+  }
+  .map-gradient {
+    background: linear-gradient(180deg, rgba(248, 249, 255, 0) 0%, #f8f9ff 100%);
+  }
+  .soft-card-shadow {
+    box-shadow: 0 4px 12px rgba(133, 144, 166, 0.04);
+  }
+  .form-focus-glow:focus-within {
+    box-shadow: 0 0 0 4px rgba(9, 20, 38, 0.05);
+  }
+  .active-dot::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #fea619;
+  }
+  .glass-header {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}

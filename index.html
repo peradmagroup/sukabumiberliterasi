@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Platform Literasi Sukabumi</title>
+    <meta name="description" content="Platform kolaborasi kegiatan literasi di Sukabumi.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Leaflet CSS for Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app-container">
+        
+        <!-- Splash Screen -->
+        <div id="splash-screen" class="screen active">
+            <div class="splash-content">
+                <i class="fa-solid fa-book-open-reader splash-logo"></i>
+                <h1>Literasi Sukabumi</h1>
+                <p>Kolaborasi & Aksi Nyata</p>
+            </div>
+            <div class="loader"></div>
+        </div>
+
+        <!-- Login Screen -->
+        <div id="login-screen" class="screen">
+            <div class="login-container">
+                <i class="fa-solid fa-book-open-reader login-logo"></i>
+                <h2>Selamat Datang</h2>
+                <p>Masuk untuk menjelajahi kegiatan literasi di Sukabumi</p>
+                
+                <button id="btn-login-google" class="btn-google">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google Logo">
+                    Masuk dengan Google
+                </button>
+                <div class="login-footer">
+                    <p>Platform kolaborasi non-pemerintah</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Dashboard Layout -->
+        <div id="main-screen" class="screen">
+            <!-- Header -->
+            <header class="app-header">
+                <div class="header-user">
+                    <img src="https://ui-avatars.com/api/?name=User&background=random" alt="User Avatar" class="user-avatar" id="header-avatar">
+                    <div class="user-info">
+                        <span class="greeting">Halo,</span>
+                        <span class="username" id="header-username">Warga Literasi</span>
+                    </div>
+                </div>
+                <button class="btn-icon" id="btn-logout"><i class="fa-solid fa-right-from-bracket"></i></button>
+            </header>
+
+            <!-- Swipeable Content Area -->
+            <main class="content-area" id="content-area">
+                
+                <!-- Slide 1: Info Literasi -->
+                <section id="slide-1" class="slide active-slide">
+                    <div class="slide-header">
+                        <h2>Info Literasi</h2>
+                        <p>Berita dan informasi terbaru seputar literasi</p>
+                    </div>
+                    <div class="feed-container" id="info-feed">
+                        <!-- Fetched from "Google Sheets" -->
+                        <div class="loading-state"><i class="fa-solid fa-spinner fa-spin"></i> Memuat data...</div>
+                    </div>
+                </section>
+
+                <!-- Slide 2: Agenda Kegiatan -->
+                <section id="slide-2" class="slide">
+                    <div class="slide-header">
+                        <h2>Agenda Kegiatan</h2>
+                        <p>Pilih dan ikuti kelas atau event yang tersedia</p>
+                    </div>
+                    <div class="accordion-container" id="agenda-container">
+                        <!-- Accordion Items will be injected by JS -->
+                    </div>
+                </section>
+
+                <!-- Slide 3: Mitra Kolaborasi -->
+                <section id="slide-3" class="slide">
+                    <div class="slide-header">
+                        <h2>Mitra Kolaborasi</h2>
+                        <p>Perpustakaan, Komunitas & TBM di Sukabumi</p>
+                    </div>
+                    <div class="map-container-wrapper">
+                        <div id="literacy-map"></div>
+                    </div>
+                    <div class="mitra-list" id="mitra-list">
+                        <!-- Profiles -->
+                    </div>
+                </section>
+
+                <!-- Slide 4: Pusat Aduan & Konsultasi -->
+                <section id="slide-4" class="slide">
+                    <div class="slide-header">
+                        <h2>Pusat Konsultasi</h2>
+                        <p>Beri saran atau konsultasikan gerakan literasimu</p>
+                    </div>
+                    
+                    <div class="disclaimer-alert">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <p>Media ini murni kolaborasi warga dan tidak berafiliasi dengan pemerintah. Tindakan bersifat aspiratif dan solutif di tingkat komunitas.</p>
+                    </div>
+
+                    <form class="consultation-form" id="consultation-form">
+                        <div class="form-group">
+                            <label>Jenis Layanan</label>
+                            <select required>
+                                <option value="" disabled selected>Pilih Layanan...</option>
+                                <option value="saran">Saran / Pesan Kegiatan</option>
+                                <option value="aduan">Aduan Minat Baca Daerah</option>
+                                <option value="tbm">Konsultasi Pendirian TBM/Pojok Baca</option>
+                                <option value="perpus">Konsultasi Kepengelolaan Perpustakaan</option>
+                                <option value="nulis">Konsultasi Kepenulisan</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Nama Anda</label>
+                            <input type="text" placeholder="Masukkan nama" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Pesan / Detail</label>
+                            <textarea rows="4" placeholder="Ceritakan detailnya..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Kirim Pesan</button>
+                    </form>
+
+                    <div class="live-aduan-section mt-4">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <h3 style="font-size: 1.1rem; color: var(--text-main);"><i class="fa-solid fa-broadcast-tower" style="color: var(--danger); margin-right: 5px;"></i> Live Aduan Publik</h3>
+                            <span style="font-size: 0.75rem; color: var(--text-muted);">Transparansi Warga</span>
+                        </div>
+                        <div class="aduan-list" id="aduan-list">
+                            <!-- Live Aduan items will be injected here -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Slide 5: Donasi Buku -->
+                <section id="slide-5" class="slide">
+                    <div class="slide-header">
+                        <h2>Donasi Buku</h2>
+                        <p>Bantu sebarkan ilmu dengan donasi bukumu</p>
+                    </div>
+                    
+                    <div class="donation-card">
+                        <div class="donation-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                        <h3>Satu Buku, Sejuta Ilmu</h3>
+                        <p>Salurkan buku bacaan layak baca ke gerakan literasi di Kota Sukabumi.</p>
+                        
+                        <div class="criteria-list">
+                            <h4>Kriteria Buku:</h4>
+                            <ul>
+                                <li><i class="fa-solid fa-check text-success"></i> Buku Cerita Anak / Novel / Motivasi</li>
+                                <li><i class="fa-solid fa-check text-success"></i> Pengetahuan Umum / Keterampilan</li>
+                                <li><i class="fa-solid fa-xmark text-danger"></i> Tidak rusak parah / sobek</li>
+                                <li><i class="fa-solid fa-xmark text-danger"></i> Bukan buku pelajaran sekolah usang</li>
+                            </ul>
+                        </div>
+                        
+                        <button class="btn-primary mt-4" onclick="window.open('https://wa.me/6280000000000?text=Halo%20saya%20ingin%20donasi%20buku', '_blank')">
+                            <i class="fa-brands fa-whatsapp"></i> Hubungi Koordinator
+                        </button>
+                    </div>
+                </section>
+
+            </main>
+
+            <!-- Bottom Navigation -->
+            <nav class="bottom-nav">
+                <a href="#" class="nav-item active" data-target="slide-1">
+                    <i class="fa-solid fa-newspaper"></i>
+                    <span>Info</span>
+                </a>
+                <a href="#" class="nav-item" data-target="slide-2">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span>Agenda</span>
+                </a>
+                <a href="#" class="nav-item" data-target="slide-3">
+                    <i class="fa-solid fa-handshake"></i>
+                    <span>Mitra</span>
+                </a>
+                <a href="#" class="nav-item" data-target="slide-4">
+                    <i class="fa-solid fa-comments"></i>
+                    <span>Konsultasi</span>
+                </a>
+                <a href="#" class="nav-item" data-target="slide-5">
+                    <i class="fa-solid fa-book-heart"></i>
+                    <i class="fa-solid fa-box-open"></i> <!-- Fallback if book-heart not available -->
+                    <span>Donasi</span>
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- App Logic -->
+    <script type="module" src="app.js"></script>
+</body>
+</html>

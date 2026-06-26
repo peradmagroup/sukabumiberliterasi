@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Literasi Sukabumi - Info Literasi</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #e2e8f0;
+            border-radius: 10px;
+        }
+        @keyframes subtle-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+        }
+        .float-animation {
+            animation: subtle-float 4s ease-in-out infinite;
+        }
+    </style>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"tertiary-container": "#30230c", "surface-container-low": "#f6f3f4", "on-tertiary-fixed": "#251904", "surface-container-high": "#eae7e8", "surface-container-lowest": "#ffffff", "on-error-container": "#93000a", "on-tertiary-fixed-variant": "#54442a", "inverse-on-surface": "#f3f0f1", "on-tertiary-container": "#9e896b", "primary-fixed-dim": "#bec7db", "on-background": "#1b1b1c", secondary: "#5b5e66", "surface-variant": "#e4e2e3", "secondary-fixed-dim": "#c4c6cf", "on-primary": "#ffffff", "inverse-surface": "#303031", "on-tertiary": "#ffffff", "error-container": "#ffdad6", "on-error": "#ffffff", "primary-container": "#1c2534", "on-secondary": "#ffffff", "on-primary-fixed": "#131c2a", background: "#fbf9f9", "on-secondary-fixed": "#181c22", "on-secondary-container": "#5f636a", "surface-tint": "#565f70", "surface-bright": "#fbf9f9", "on-surface-variant": "#45474c", "tertiary-fixed-dim": "#dac3a1", surface: "#fbf9f9", tertiary: "#190e00", "tertiary-fixed": "#f7dfbc", error: "#ba1a1a", "secondary-fixed": "#e0e2eb", "on-surface": "#1b1b1c", "on-secondary-fixed-variant": "#43474e", "inverse-primary": "#bec7db", primary: "#07101e", "surface-container": "#f0edee", "surface-container-highest": "#e4e2e3", "outline-variant": "#c5c6cc", "surface-dim": "#dcd9da", "primary-fixed": "#dae3f7", "on-primary-fixed-variant": "#3e4757", outline: "#75777d", "secondary-container": "#dddfe8", "on-primary-container": "#838c9f"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, spacing: {"margin-mobile": "16px", md: "16px", "margin-desktop": "32px", xs: "4px", sm: "8px", lg: "24px", base: "4px", xl: "40px", gutter: "16px"}, fontFamily: {"headline-md": ["Inter"], "body-sm": ["Inter"], "headline-lg-mobile": ["Inter"], "headline-sm": ["Inter"], "label-md": ["Inter"], "headline-lg": ["Inter"], "body-md": ["Inter"], "body-lg": ["Inter"], headline: ["Inter"], display: ["Inter"], body: ["Inter"], label: ["Inter"]}, fontSize: {"headline-md": ["24px", {lineHeight: "32px", fontWeight: "600"}], "body-sm": ["14px", {lineHeight: "20px", fontWeight: "400"}], "headline-lg-mobile": ["26px", {lineHeight: "32px", letterSpacing: "-0.02em", fontWeight: "700"}], "headline-sm": ["20px", {lineHeight: "28px", fontWeight: "600"}], "label-md": ["12px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600"}], "headline-lg": ["32px", {lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700"}], "body-md": ["16px", {lineHeight: "24px", fontWeight: "400"}], "body-lg": ["18px", {lineHeight: "28px", fontWeight: "400"}]}}}};</script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md shadow-sm">
+<div class="flex justify-between items-center px-margin-mobile h-16 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary/10">
+<img class="w-full h-full object-cover" data-alt="A close-up professional portrait of a smiling Indonesian student in a bright library setting. The lighting is warm and natural, emphasizing a studious yet friendly atmosphere. The aesthetic is clean and modern, following the soft-UI design language of a community literacy app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUCTeQRqdoJFy087KCFD2LOawwMp-gV_s4tdIF1JbJNJ-89PZBbK4j3l0WJU0ocC4plU8Ave0QDvTAtaURFHPG7v3IXSFd4agFg5t4nZJ2QlW-8bnMwKERL2mjShCCeS_vz6N-rstK6wpsbj_700x63Y42Tz78UAAShsQfmcQr1Xg-5XT9h47JXG43mWckq6xz31z-xpE6VQ9rNjl_Hwhl0eV0Ll5bFPgupPTO88cJ8SEZYz-W_3DWLhiyAgWc6kKsQp8Ve_flvW4p9Us"/>
+</div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Sukabumi Berliterasi</h1>
+</div>
+<button class="transition-all duration-250 ease-out active:scale-95 text-primary p-2 hover:bg-surface-container-low rounded-full">
+<span class="material-symbols-outlined">logout</span>
+</button>
+</div>
+</header>
+<main class="pt-20 px-margin-mobile max-w-7xl mx-auto">
+<!-- Search & Hero Section -->
+<section class="py-lg">
+<div class="relative mb-lg">
+<input class="w-full h-14 pl-12 pr-4 bg-surface-container-lowest border border-outline-variant/30 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all duration-200 font-body-md text-on-surface shadow-sm" placeholder="Cari info literasi..." type="text"/>
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+</div>
+<div class="flex gap-3 overflow-x-auto pb-4 custom-scrollbar no-scrollbar">
+<button class="whitespace-nowrap px-6 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md transition-all active:scale-95">Semua</button>
+<button class="whitespace-nowrap px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-surface-variant transition-all active:scale-95">Berita</button>
+<button class="whitespace-nowrap px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-surface-variant transition-all active:scale-95">Tips</button>
+<button class="whitespace-nowrap px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-surface-variant transition-all active:scale-95">Rekomendasi</button>
+<button class="whitespace-nowrap px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-surface-variant transition-all active:scale-95">Event</button>
+</div>
+</section>
+<!-- Featured News (Asymmetric Layout) -->
+<section class="mb-xl">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-7 group cursor-pointer">
+<div class="relative h-80 rounded-2xl overflow-hidden shadow-lg transition-transform duration-500 hover:scale-[1.02]">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A wide-angle artistic shot of a community reading garden in Sukabumi, Indonesia. Lush tropical greenery surrounds elegant wooden bookshelves and comfortable seating areas. Sunlight filters through large leaves, creating a peaceful, scholarly atmosphere in a modern architectural space." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCwU9Couyo31ag0ByviUkDmHIrbfGiNg8sZK46ZEI3PRhAy9SPWm1TgDdHdVRyIEfneUStRGk6xYWaE7gK5O_0pZZ2M-gYczmi5oMazye40wXFSQ0YjuKrXmYIHl1qDdzbnrjRM2U9MZ-0vbYt6hb_nVXy29PUwvIEDHSP8fyepJobz8BZJAdz556D7jqZNP9irZqLR8gzyOWeTmmX-QMnZNbYtwcdraayvJXKQIfbUPnqh5yS7B1W08DJyHyaVqH1Jnhr52HhGULGG')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-lg">
+<span class="inline-block px-3 py-1 bg-secondary-container text-on-secondary-container text-xs font-bold rounded-md mb-3">UTAMA</span>
+<h2 class="text-on-primary font-headline-sm text-headline-sm mb-2 group-hover:underline underline-offset-4">Taman Baca Digital Sukabumi Resmi Dibuka untuk Publik</h2>
+<p class="text-on-primary/80 font-body-sm text-body-sm line-clamp-2">Inisiatif terbaru pemerintah kota untuk meningkatkan minat baca generasi Z melalui fasilitas teknologi modern...</p>
+</div>
+</div>
+</div>
+<div class="md:col-span-5 grid grid-cols-1 gap-gutter">
+<div class="bg-surface-container-low rounded-2xl p-lg flex flex-col justify-between border border-outline-variant/20">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-secondary font-label-md text-label-md">24 Okt 23</span>
+<span class="material-symbols-outlined text-secondary">bookmark</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Pameran Buku Lokal Sukabumi: Temui Penulis Kebanggaan</h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm line-clamp-2">Saksikan diskusi panel dan workshop menulis kreatif akhir pekan ini di Balai Kota.</p>
+</div>
+<button class="mt-4 text-primary font-label-md text-label-md flex items-center gap-2 self-start group">
+                            Baca Selengkapnya
+                            <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- News Feed (Bento-style Grid) -->
+<section class="pb-xl">
+<h2 class="font-headline-sm text-headline-sm text-primary mb-lg flex items-center gap-2">
+<span class="material-symbols-outlined">newspaper</span>
+                Info Literasi Terkini
+            </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+<!-- Card 1 -->
+<article class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-[0_4px_12px_rgba(0,0,0,0.04)] border border-outline-variant/20 hover:shadow-md transition-all duration-300">
+<div class="h-48 relative">
+<img class="w-full h-full object-cover" data-alt="A minimalist overhead shot of a clean study desk with an open book, a modern laptop, and a ceramic cup of coffee. The lighting is bright and even, casting soft shadows. The overall aesthetic is organized and productive, reflecting a modern approach to literacy and learning." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZFvbWwvkYwOLkdusaMmDyiSySZ77vMKH9sZyHq5Ur7D2jRjxkuBR0U1L4cEoYg6YBwjVW0Mo7KV0mpusVZqlRGI1_q0StusxvZqkP7ylr2ZKF9m0mTduyrLXkwCRSy9YGtQLk2MOZ6K0DZMEk_NBtnm6uPpM0xVwOdBMuSJZYcptzlggN53dYfu7xZVcGjhW69xoioDqwR6LcwUQRoPPeXwvSypQG1iLKrUrpkf1RZmxos5gLt-J8LxXdPCN5bDLywTqencsUbUmA"/>
+<div class="absolute top-4 left-4 bg-surface/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold text-primary">TIPS</div>
+</div>
+<div class="p-lg">
+<div class="flex items-center gap-2 mb-2 text-outline font-label-md text-label-md">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+                            24 Okt 23
+                        </div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3 line-clamp-2 leading-tight">5 Cara Membangun Kebiasaan Membaca di Era Digital</h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm line-clamp-3 mb-4">Membaca tidak harus lama, konsistensi adalah kunci. Berikut adalah tips praktis untuk warga Sukabumi...</p>
+<div class="flex items-center justify-between">
+<span class="text-secondary font-label-md text-label-md">Admin Literasi</span>
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-colors">
+<span class="material-symbols-outlined text-primary">share</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-[0_4px_12px_rgba(0,0,0,0.04)] border border-outline-variant/20 hover:shadow-md transition-all duration-300">
+<div class="h-48 relative">
+<img class="w-full h-full object-cover" data-alt="A group of diverse teenagers in Sukabumi engaged in a lively discussion around a stack of colorful books in a bright, modern cafe environment. The style is candid and vibrant, with natural lighting showcasing a sense of community and shared passion for literature." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAv6QOsbRpLQPjDIktBkTAkc979N-UWN7JUn6oW0VSGxOGfqqeVBr7V3bsePyLT1kd8IDyLI_7yQHoOWN5FxQHm8kFEqT-QL1bSKDX1EmzHzV2pPbWlnOK7kd8Ju3UIw-I-TgwsPVXZTEiWLFSOIgdE_KND6Eq5KlZO7E7vPou5nTwTjuVHSsyXa1NKa0Od5CjemDXX559Vf9x5vytgb10N-Jqd40TWP-yBcVxZgdOveZjCxBLAEIY8uRvkQoNkfxUwlfNDo4tzSNhO"/>
+<div class="absolute top-4 left-4 bg-surface/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold text-primary">KOMUNITAS</div>
+</div>
+<div class="p-lg">
+<div class="flex items-center gap-2 mb-2 text-outline font-label-md text-label-md">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+                            23 Okt 23
+                        </div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3 line-clamp-2 leading-tight">Bedah Buku: Menjelajahi Sejarah Sukabumi Melalui Sastra</h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm line-clamp-3 mb-4">Mari bergabung dalam sesi bedah buku eksklusif yang membahas perkembangan kota kita dari perspektif sejarah.</p>
+<div class="flex items-center justify-between">
+<span class="text-secondary font-label-md text-label-md">Komunitas Baca</span>
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-colors">
+<span class="material-symbols-outlined text-primary">share</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-[0_4px_12px_rgba(0,0,0,0.04)] border border-outline-variant/20 hover:shadow-md transition-all duration-300">
+<div class="h-48 relative">
+<img class="w-full h-full object-cover" data-alt="A high-tech digital library interface displayed on a large sleek tablet screen. The UI design on the screen is modern with indigo and amber accents, showing various book covers and data visualizations. The background is a slightly blurred, high-end office environment with soft ambient lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvY3VKfGbboCmCzXsSSn5AfnR5TDcldswX1RKBuuNXKSRtCrK0jtPyKaDD68LQrgf_Gee1arNJvOCrsEvtKKPCQrmPETzsjL38SFlN9r4smlVqRhWZ-eD_dDvnOXScc3mIrsfHsD8O4mgzWE53fUbcqQ6EmEPoShEJ7eeLx6E03reO-nOWhjX-S5iLW_kCvDxPvS-sdUnIph2nK1-QkR_1QngXjdipCw16qdjptxJG-zxQ3a21WCp8zAA358UtCTcgW_2mEu_9JGYA"/>
+<div class="absolute top-4 left-4 bg-surface/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold text-primary">TEKNOLOGI</div>
+</div>
+<div class="p-lg">
+<div class="flex items-center gap-2 mb-2 text-outline font-label-md text-label-md">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+                            22 Okt 23
+                        </div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-3 line-clamp-2 leading-tight">Akses E-Book Gratis untuk Seluruh Siswa di Sukabumi</h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm line-clamp-3 mb-4">Program literasi nasional kini hadir dalam genggaman. Daftarkan akun sekolah Anda sekarang juga.</p>
+<div class="flex items-center justify-between">
+<span class="text-secondary font-label-md text-label-md">Dinas Pendidikan</span>
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-colors">
+<span class="material-symbols-outlined text-primary">share</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+<!-- Loading Spinner / More -->
+<div class="mt-xl flex justify-center">
+<button class="flex items-center gap-2 px-8 py-3 bg-primary-container text-on-primary-container rounded-full font-label-md text-label-md hover:opacity-90 transition-all active:scale-95 shadow-sm">
+                    Lihat Lebih Banyak
+                    <span class="material-symbols-outlined animate-bounce">expand_more</span>
+</button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-2 py-3 pb-safe bg-surface/90 backdrop-blur-md border-t border-outline-variant/30 shadow-[0_-4px_12px_rgba(0,0,0,0.04)] z-50 rounded-t-xl">
+<!-- Info Active -->
+<a class="flex flex-col items-center justify-center text-secondary font-bold relative after:content-[''] after:w-1 after:h-1 after:bg-secondary-container after:rounded-full after:mt-1 transition-transform duration-200 ease-in-out active:scale-90" href="#">
+<span class="material-symbols-outlined" data-weight="fill">info</span>
+<span class="font-label-md text-label-md">Info</span>
+</a>
+<!-- Agenda -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary/80 transition-transform duration-200 ease-in-out active:scale-90" href="#">
+<span class="material-symbols-outlined">event_note</span>
+<span class="font-label-md text-label-md">Agenda</span>
+</a>
+<!-- Mitra -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary/80 transition-transform duration-200 ease-in-out active:scale-90" href="#">
+<span class="material-symbols-outlined">handshake</span>
+<span class="font-label-md text-label-md">Mitra</span>
+</a>
+<!-- Konsul -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary/80 transition-transform duration-200 ease-in-out active:scale-90" href="#">
+<span class="material-symbols-outlined">chat</span>
+<span class="font-label-md text-label-md">Konsul</span>
+</a>
+<!-- Donasi -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary/80 transition-transform duration-200 ease-in-out active:scale-90" href="#">
+<span class="material-symbols-outlined">volunteer_activism</span>
+<span class="font-label-md text-label-md">Donasi</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for search bar focus
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('scale-[1.01]');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('scale-[1.01]');
+        });
+
+        // Navigation Highlight Logic
+        const navItems = document.querySelectorAll('nav a');
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                // e.preventDefault(); // Prevent jump for demo
+                navItems.forEach(nav => {
+                    nav.className = "flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary/80 transition-transform duration-200 ease-in-out active:scale-90";
+                    // Remove dot indicator
+                    const dot = nav.querySelector('span:last-child').nextSibling;
+                    if(nav.classList.contains('after:bg-secondary-container')) {
+                         nav.classList.remove('after:bg-secondary-container', 'after:content-[\'\']', 'after:w-1', 'after:h-1', 'after:rounded-full', 'after:mt-1', 'text-secondary', 'font-bold', 'relative');
+                    }
+                });
+                
+                item.className = "flex flex-col items-center justify-center text-secondary font-bold relative after:content-[''] after:w-1 after:h-1 after:bg-secondary-container after:rounded-full after:mt-1 transition-transform duration-200 ease-in-out active:scale-90";
+            });
+        });
+
+        // Category filter selection
+        const filterBtns = document.querySelectorAll('section button.whitespace-nowrap');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-primary', 'text-on-primary');
+                    b.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+                });
+                btn.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+                btn.classList.add('bg-primary',</script></body></html>
