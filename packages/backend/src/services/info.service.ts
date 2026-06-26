@@ -49,7 +49,7 @@ export const getArticles = async (type?: string, category?: string) => {
 
 export const getArticleById = async (id: string) => {
   const articles = await getArticles();
-  return articles.find(a => a.id === id);
+  return articles.find((a: any) => a.id === id);
 };
 
 export const createArticle = async (data: any) => {
