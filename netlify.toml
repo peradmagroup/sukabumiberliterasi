@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build -w packages/backend && npm run build -w packages/literasi-app"
+  command = "npm install --include=dev && npm run build -w packages/backend && npm run build -w packages/literasi-app"
   publish = "packages/literasi-app/dist"
   functions = "netlify/functions"
 
