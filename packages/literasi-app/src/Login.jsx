@@ -97,7 +97,11 @@ export default function Login({ onLogin }) {
             } else {
               const { data, error } = await authClient.signIn.email({ email, password });
               if (error) {
+                console.error("Login error:", error);
                 alert(error.message || "Gagal masuk, periksa email dan kata sandi Anda.");
+              } else {
+                // Force reload to ensure session is recognized
+                window.location.reload();
               }
             }
           }}>
