@@ -11,7 +11,7 @@ import mitraRoutes from './routes/mitra.routes';
 import konsulRoutes from './routes/konsul.routes';
 import donasiRoutes from './routes/donasi.routes';
 
-const app = express();
+export const app = express();
 
 // Middlewares
 app.use(cors({
@@ -20,6 +20,14 @@ app.use(cors({
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Handle Netlify rewrite path
+app.use((req, res, next) => {
+  if (req.url.startsWith('/.netlify/functions/api')) {
+    req.url = req.url.replace('/.netlify/functions/api', '/api');
+  }
+  next();
+});
 
 // Better Auth Setup
 app.all("/api/auth/*", toNodeHandler(auth));
@@ -37,6 +45,8 @@ app.get('/health', (req, res) => {
 });
 
 // Start Server
-app.listen(ENV.PORT, () => {
-  console.log(`Server is running on port ${ENV.PORT}`);
-});
+if (process.env.NETLIFY !== 'true') {
+  app.listen(ENV.PORT, () => {
+    console.log(`Server is running on port ${ENV.PORT}`);
+  });
+}
